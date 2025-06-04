@@ -2,6 +2,7 @@ import { Pressable, PressableProps, Text } from "react-native";
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
+  withTiming,
 } from "react-native-reanimated";
 
 import { THEME } from "../../styles/theme";
@@ -36,11 +37,11 @@ export function Level({
   });
 
   function handlePressIn() {
-    scale.value = 1.1;
+    scale.value = withTiming(1.1);
   }
 
   function handlePressOut() {
-    scale.value = 1;
+    scale.value = withTiming(1);
   }
 
   return (
