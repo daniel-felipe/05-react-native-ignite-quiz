@@ -1,5 +1,5 @@
-import { View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import { View } from 'react-native';
 
 import { THEME } from '../styles/theme';
 
@@ -12,5 +12,5 @@ export function Routes() {
         <AppRoutes />
       </NavigationContainer>
     </View>
-  )
+  );
 }

@@ -6,15 +6,15 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: THEME.COLORS.GREY_800,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   levels: {
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'center',
-    marginTop: 32
+    marginTop: 32,
   },
   cards: {
     paddingTop: 32,
-  }
+  },
 });

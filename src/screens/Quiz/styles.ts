@@ -15,5 +15,5 @@ export const styles = StyleSheet.create({
   footer: {
     flexDirection: 'row',
     marginTop: 24,
-  }
+  },
 });

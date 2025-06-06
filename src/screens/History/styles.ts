@@ -9,5 +9,5 @@ export const styles = StyleSheet.create({
   },
   history: {
     padding: 32,
-  }
+  },
 });

@@ -5,22 +5,15 @@ import { styles } from './styles';
 type Props = TouchableOpacityProps & {
   checked: boolean;
   title: string;
-}
+};
 
 export function Option({ checked, title, ...rest }: Props) {
   return (
     <TouchableOpacity
-      style={
-        [
-          styles.container,
-          checked && styles.checked
-        ]
-      }
+      style={[styles.container, checked && styles.checked]}
       {...rest}
     >
-      <Text style={styles.title}>
-        {title}
-      </Text>
+      <Text style={styles.title}>{title}</Text>
     </TouchableOpacity>
   );
 }

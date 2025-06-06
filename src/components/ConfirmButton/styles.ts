@@ -11,12 +11,12 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: THEME.COLORS.BRAND_MID,
     flexDirection: 'row',
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   title: {
     color: THEME.COLORS.WHITE,
     fontFamily: 'Roboto_700Bold',
     fontSize: 16,
-    marginRight: 7
+    marginRight: 7,
   },
 });

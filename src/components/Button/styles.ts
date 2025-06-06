@@ -15,6 +15,6 @@ export const styles = StyleSheet.create({
   title: {
     color: THEME.COLORS.WHITE,
     fontFamily: 'Roboto_700Bold',
-    fontSize: 16
-  }
+    fontSize: 16,
+  },
 });

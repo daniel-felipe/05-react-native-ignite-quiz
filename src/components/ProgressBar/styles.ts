@@ -12,5 +12,5 @@ export const styles = StyleSheet.create({
     height: 8,
     backgroundColor: THEME.COLORS.BRAND_LIGHT,
     borderRadius: 8,
-  }
+  },
 });

@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { HistoryProps } from '../components/HistoryCard';
 import { Alert } from 'react-native';
+import type { HistoryProps } from '../components/HistoryCard';
 
 const HISTORY_COLLECTION = '@ignite_quiz:history';
 
@@ -18,27 +18,19 @@ export async function historyGetAll() {
 }
 
 export async function historyAdd(newHistory: HistoryProps) {
-  try {
-    const response = await historyGetAll();
-    const storedHistory = response ? response : [];
+  const response = await historyGetAll();
+  const storedHistory = response ? response : [];
 
-    const storage = JSON.stringify([...storedHistory, newHistory]);
+  const storage = JSON.stringify([...storedHistory, newHistory]);
 
-    await AsyncStorage.setItem(HISTORY_COLLECTION, storage);
-  } catch (error) {
-    throw error;
-  }
+  await AsyncStorage.setItem(HISTORY_COLLECTION, storage);
 }
 
 export async function historyRemove(id: string) {
-  try {
-    const storage = await historyGetAll();
+  const storage = await historyGetAll();
 
-    const filtered = storage.filter(history => history.id !== id);
-    const histories = JSON.stringify(filtered);
+  const filtered = storage.filter((history) => history.id !== id);
+  const histories = JSON.stringify(filtered);
 
-    await AsyncStorage.setItem(HISTORY_COLLECTION, histories);
-  } catch (error) {
-    throw error;
-  }
+  await AsyncStorage.setItem(HISTORY_COLLECTION, histories);
 }

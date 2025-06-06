@@ -17,6 +17,6 @@ export const styles = StyleSheet.create({
     color: THEME.COLORS.WHITE,
     fontSize: 18,
     textAlign: 'center',
-    marginBottom: 18
+    marginBottom: 18,
   },
 });

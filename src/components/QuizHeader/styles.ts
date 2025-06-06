@@ -21,9 +21,9 @@ export const styles = StyleSheet.create({
     fontSize: 16,
   },
   question: {
-    color: '#C4C4CC'
+    color: '#C4C4CC',
   },
   length: {
-    color: '#C4C4CC'
+    color: '#C4C4CC',
   },
 });

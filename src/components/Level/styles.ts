@@ -11,12 +11,12 @@ export const styles = StyleSheet.create({
     borderColor: 'red',
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 6
+    margin: 6,
   },
   title: {
     textTransform: 'uppercase',
     fontSize: 12,
     fontFamily: THEME.FONTS.REGULAR,
-    color: 'white'
-  }
+    color: 'white',
+  },
 });
