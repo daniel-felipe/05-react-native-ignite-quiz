@@ -1,8 +1,8 @@
-import { Dimensions, Text, View } from 'react-native';
+import { Dimensions, Text } from 'react-native';
 
+import Animated, { Keyframe } from 'react-native-reanimated';
 import { Option } from '../Option';
 import { styles } from './styles';
-import Animated, { Keyframe } from 'react-native-reanimated';
 
 type QuestionProps = {
   title: string;
@@ -39,17 +39,11 @@ export function Question({
   const exitingKeyFrame = new Keyframe({
     from: {
       opacity: 1,
-      transform: [
-        { translateX: 0 },
-        { rotate: '0deg' },
-      ]
+      transform: [{ translateX: 0 }, { rotate: '0deg' }],
     },
     to: {
       opacity: 1,
-      transform: [
-        { translateX: SCREEN_WIDTH * (-1) },
-        { rotate: '-90deg' },
-      ]
+      transform: [{ translateX: SCREEN_WIDTH * -1 }, { rotate: '-90deg' }],
     },
   });
 
