@@ -12,11 +12,11 @@ import Animated, {
 import { Header } from '../../components/Header';
 import { HistoryCard, HistoryProps } from '../../components/HistoryCard';
 
+import { Swipeable } from 'react-native-gesture-handler';
 import { Loading } from '../../components/Loading';
 import { historyGetAll, historyRemove } from '../../storage/quizHistoryStorage';
-import { styles } from './styles';
-import { Swipeable } from 'react-native-gesture-handler';
 import { THEME } from '../../styles/theme';
+import { styles } from './styles';
 
 export function History() {
   const [isLoading, setIsLoading] = useState(true);
