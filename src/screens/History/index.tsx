@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { useNavigation } from '@react-navigation/native';
 import { HouseLine, Trash } from 'phosphor-react-native';
-import { Alert, Pressable, ScrollView, View } from 'react-native';
+import { Alert, ScrollView, View } from 'react-native';
 import Animated, {
   Layout,
   SlideInRight,
@@ -86,13 +86,13 @@ export function History() {
               }}
               overshootLeft={false}
               containerStyle={styles.swipeableContainer}
+              leftThreshold={20}
+              renderRightActions={() => null}
+              onSwipeableOpen={() => handleRemove(item.id, index)}
               renderLeftActions={() => (
-                <Pressable
-                  style={styles.swipeableRemove}
-                  onPress={() => handleRemove(item.id, index)}
-                >
+                <View style={styles.swipeableRemove}>
                   <Trash size={32} color={THEME.COLORS.GREY_100} />
-                </Pressable>
+                </View>
               )}
             >
               <HistoryCard data={item} />
