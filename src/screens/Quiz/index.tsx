@@ -12,6 +12,7 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
+import * as Haptics from 'expo-haptics';
 
 import { useNavigation, useRoute } from '@react-navigation/native';
 
@@ -74,7 +75,7 @@ export function Quiz() {
   function handleSkipConfirm() {
     Alert.alert('Pular', 'Deseja realmente pular a questão?', [
       { text: 'Sim', onPress: () => handleNextQuestion() },
-      { text: 'Não', onPress: () => {} },
+      { text: 'Não', onPress: () => { } },
     ]);
   }
 
@@ -137,7 +138,8 @@ export function Quiz() {
     return true;
   }
 
-  function shakeAnimation() {
+  async function shakeAnimation() {
+    await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error)
     shake.value = withSequence(
       withTiming(3, { duration: 400, easing: Easing.bounce }),
       withTiming(0, undefined, (finished) => {
@@ -235,7 +237,7 @@ export function Quiz() {
 
   return (
     <View style={styles.container}>
-      <OverlayFeedback status={0} />
+      <OverlayFeedback status={statusReply} />
 
       <Animated.View style={fixedProgressBarStyles}>
         <Text style={styles.title}>{quiz.title}</Text>
